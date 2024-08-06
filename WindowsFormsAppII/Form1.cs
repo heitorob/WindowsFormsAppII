@@ -30,14 +30,33 @@ namespace WindowsFormsAppII
             int g = el + ag + tv + al + ou;
             int s = r - g;
 
-            lblGASTOS.Text = g.ToString();
-            lblSALDO.Text = s.ToString();
+            lblGASTOS.Text = g.ToString("C");
+            lblSALDO.Text = s.ToString("C");
 
             if (g > r)
             {
-                lblGASTOS.ForeColor = Color.Red;
-                lblSALDO.ForeColor = Color.Red;
+                lblSALDO.ForeColor = Color.Firebrick;
             }
+        }
+
+        private void btnNOVO_Click(object sender, EventArgs e)
+        {
+            txtRENDA.Clear();
+            txtAGUA.Clear();
+            txtELETRICA.Clear();
+            txtTV.Clear();
+            txtALIMENTO.Clear();
+            txtOUTROS.Clear();
+
+            lblGASTOS.Text = "0,00";
+            lblSALDO.Text = "0,00";
+            lblGASTOS.ForeColor = Color.Black;
+            lblSALDO.ForeColor = Color.Black;
+        }
+
+        private void btnFECHAR_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
